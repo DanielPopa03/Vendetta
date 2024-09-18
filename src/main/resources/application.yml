@@ -1,0 +1,18 @@
+spring:
+    application:
+        name: vendetta
+    datasource:
+        url: jdbc:postgresql://localhost:5432/vendetta
+        username: dani
+        password: 123456
+        driver-class-name: org.postgresql.Driver
+    security:
+        oauth2:
+            resourceserver:
+             opaque-token:
+               introspection-uri: https://www.googleapis.com
+               clientId: putSomethingValidHere
+               clientSecret: putSomethingValidHere
+    jpa:
+      hibernate:
+        ddl-auto: update

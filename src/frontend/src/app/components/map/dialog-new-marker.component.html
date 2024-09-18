@@ -1,0 +1,32 @@
+<h1 mat-dialog-title class="dialog-title">Add New Report</h1>
+<div *ngIf="isLoading" class="loading-container">
+    <mat-spinner></mat-spinner>
+    <p>Loading...</p>
+  </div>
+<div  mat-dialog-content class="dialog-content">
+  <form [formGroup]="markerForm" class="form-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Titlu</mat-label>
+      <input matInput formControlName="name">
+      <mat-error *ngIf="hasError('name', 'titleIsTheSame')">
+        Title must be unique
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Descriere</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Type Of Marker</mat-label>
+      <mat-select formControlName="typesOfMarkers">
+        <mat-option *ngFor="let option of typesOfMarkers" [value]="option.id">{{ option.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions class="actions-container">
+  <button mat-button (click)="onContinue()" [disabled]="markerForm.invalid">Continue</button>
+</div>
+

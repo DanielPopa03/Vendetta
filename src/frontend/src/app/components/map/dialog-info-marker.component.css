@@ -1,0 +1,25 @@
+.full-width {
+    width: 100%;
+  }
+  
+  .comments-container {
+    max-height: 350px; /* Adjust as needed */
+    overflow-y: auto;
+    margin-top: 10px;
+    
+    padding: 10px;
+  }
+  
+  .comment {
+    margin-bottom: 10px;
+  }
+  
+  .comment mat-label {
+    font-weight: bold;
+    display: block;
+  }
+  
+  .comment p {
+    margin: 0;
+  }
+  

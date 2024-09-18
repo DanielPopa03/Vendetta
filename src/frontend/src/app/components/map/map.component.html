@@ -1,0 +1,15 @@
+
+<!-- <google-map  height="500px"
+width="100%"
+[zoom]="zoom"
+[center]="center"
+[options]="{
+  zoomControl: true, 
+  mapTypeControl: false, 
+  fullscreenControl: false 
+}"
+(mapClick)="click($event)">
+</google-map> -->
+<button mat-button (click)="openDialog()" style="background-color: grey;">Open Dialog</button>
+
+<div #mapContainer style="width: 100%; height: 500px;"></div>
